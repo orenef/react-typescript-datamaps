@@ -1,15 +1,17 @@
 {
-  "name": "react-typescript-rollup-parcel-template",
+  "name": "react-typescript-datamaps",
   "version": "1.0.0",
-  "description": "Base template",
+  "description": "react wrapper component for the 'datamaps' library (Interactive maps for data visualizations). Out of the box it includes advance arc-attack-plugin and demo mode.",
   "main": "build/index.js",
   "module": "build/index.es.js",
+  "keywords": ["react", "typescript", "datamaps", "plguin", "cyber", "attack", "map"],
+  "homepage": "https://github.com/orenef/react-typescript-datamaps",
   "scripts": {
     "start": "parcel --out-dir playground-build ./src/playground/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup --config"
   },
-  "author": "",
+  "author": "orenef",
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.1.0",
@@ -27,5 +29,9 @@
   },
   "peerDependencies": {
     "react": "^16.13.1"
+  },
+  "dependencies": {
+    "d3": "^3.5.6",
+    "datamaps": "^0.5.9"
   }
 }

@@ -20,6 +20,6 @@
       "downlevelIteration": true,
       "jsx": "react"
     },
-    "include": ["src"],
-    "exclude": ["node_modules", "build", "playground-build"]
+    "include": ["src", "node_modules/datamaps/src/index.d.ts", "types"],
+    "exclude": ["node_modules", "build", "playground-build"],
 }
