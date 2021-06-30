@@ -14,12 +14,12 @@ interface Props {
 	bubbles?: any;
 	data?: any;
 	graticule?: boolean;
-	height?:  null | number;
+	height?:  null | number | string;
 	labels?: boolean;
 	responsive?: boolean;
 	style?: any;
 	updateChoroplethOptions?: any;
-	width?: null | number;
+	width?: null | number | string;
 	geographyConfig?: DataMapGeographyConfigOptions;
 	fills?: any;
 	setProjection?: (element: HTMLElement, options: DataMapOptions) => DataMapProjection;

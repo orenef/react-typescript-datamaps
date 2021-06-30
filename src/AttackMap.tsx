@@ -6,8 +6,8 @@ import { ArcItem } from './ArcPlugin';
 import './style.css';
 
 function demoHelper() {
-	const tempIndex = (Math.floor(Math.random() * 209));
-	const tempIndex2 = (Math.floor(Math.random() * 209));
+	const tempIndex = (Math.floor(Math.random() * 205));
+	const tempIndex2 = (Math.floor(Math.random() * 205));
 	const tempIndex3 = (Math.floor(Math.random() * 4));
 
 	const colors = ['green', '#e5a21d', '#e9616d'];

@@ -4,13 +4,15 @@ react-typescript-datamaps is a react wrapper component for the [datamaps](https:
 
 Out of the box it includes advance arc-attack-plugin and demo mode.
 
-codesandbox demo -> [Demo]()
+[DataMapsWrapper](https://codesandbox.io/s/react-typescript-datamaps-lgzbz)
+
+[AttackMap demo](https://codesandbox.io/s/react-typescript-datamaps-2-l7ebe)
 ## Installation
 
-Use the package manager [npm]() to install .
+Use the package manager [npm](https://www.npmjs.com/package/react-typescript-datamaps) to install .
 
 ```bash
-npm install 
+npm install react-typescript-datamaps
 ```
 ## Out of the box components:
 AttackMap - Adding ability to easily disable attacks on svg maps.
@@ -37,34 +39,56 @@ export default function App() {
 
 const demoProps = {
 	scope: 'india',
-			geographyConfig: {
-				popupOnHover: true,
-				highlightOnHover: true,
-				borderColor: '#444',
-				borderWidth: 0.5,
-				dataUrl: 'https://rawgit.com/Anujarya300/bubble_maps/master/data/geography-data/india.topo.json'
-				//dataJson: topoJsonData
-			},
-			fills: {
-				'MAJOR': '#306596',
-				'MEDIUM': '#0fa0fa',
-				'MINOR': '#bada55',
-				defaultFill: '#dddddd'
-			},
-			data: {
-				'JH': { fillKey: 'MINOR' },
-				'MH': { fillKey: 'MINOR' }
-			},
-			setProjection: function () {
-				var projection = d3.geo.mercator()
-					.center([78.9629, 23.5937]) // always in [East Latitude, North Longitude]
-					.scale(1000);
-				var path = d3.geo.path().projection(projection);
-				return { path: path, projection: projection };
-			}
+		geographyConfig: {
+			popupOnHover: true,
+			highlightOnHover: true,
+			borderColor: '#444',
+			borderWidth: 0.5,
+			dataUrl: 'https://rawgit.com/Anujarya300/bubble_maps/master/data/geography-data/india.topo.json'
+			//dataJson: topoJsonData
+		},
+	bubblesConfig: {
+		borderWidth: 2,
+		borderOpacity: 1,
+		borderColor: '#FFFFFF',
+		popupOnHover: true, // True to show the popup while hovering
+		radius: null,
+		popupTemplate: function (geo, data) {
+		  return `<div class="hoverinfo">city: ${data.state}, Slums: ${data.radius}%</div>`;
+		},
+		fillOpacity: 0.75,
+		animate: true,
+		highlightOnHover: true,
+		highlightFillColor: '#FC8D59',
+		highlightBorderColor: 'rgba(250, 15, 160, 0.2)',
+		highlightBorderWidth: 2,
+		highlightBorderOpacity: 1,
+		highlightFillOpacity: 0.85,
+		exitDelay: 100, // Milliseconds
+		key: JSON.stringify
+	},
+	fills: {
+		'MAJOR': '#306596',
+		'MEDIUM': '#0fa0fa',
+		'MINOR': '#bada55',
+		defaultFill: '#dddddd'
+	},
+	data: {
+		'JH': { fillKey: 'MINOR' },
+		'MH': { fillKey: 'MINOR' }
+	},
+	setProjection: function (element) {
+		var projection = d3.geo.mercator()
+		.center([80, 25])
+		.scale(600)
+		.translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+		var path = d3.geo.path()
+		.projection(projection);
+	  			  return {path: path, projection: projection};
+	}
 };
 
-let bubblesDemo = [
+const bubblesDemo = [
 	{
 		centered: "MH",
 		fillKey: "MAJOR",
@@ -109,20 +133,27 @@ let bubblesDemo = [
 	}
 ];
 
-export default function App() {
+function Demo() {
 	const [bubbles, setBubbles] = React.useState([]);
 	React.useEffect(() => {
 		setInterval(() => {
-			setBubbles(bubblesDemo);
-		}, 4000);
+			setBubbles(bubblesDemo as any);
+		}, 1000);
 	},[]);
   return (
-	<div className="App">
+	<div style={{ width: '600px', height: '600px' }} className="App">
 		<DataMapsWrapper
-			responsive
 			{...demoProps}
 			bubbles={bubbles}
 		/>
+	</div>
+  );
+}
+
+export default function App() {
+  return (
+	<div className="example">
+		<Demo/>
 	</div>
   );
 }
@@ -139,4 +170,4 @@ demoMod | boolean | false | Special mode - use to active demo of attacks without
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[ISC](https://choosealicense.com/licenses/isc/)
