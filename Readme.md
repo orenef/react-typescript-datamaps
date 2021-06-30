@@ -1,10 +1,10 @@
 # react-typescript-datamaps
-
+![NPM](https://img.shields.io/npm/l/react-typescript-datamaps) ![npm](https://img.shields.io/npm/dt/react-typescript-datamaps) ![npm bundle size](https://img.shields.io/bundlephobia/min/react-typescript-datamaps)
 react-typescript-datamaps is a react wrapper component for the [datamaps](https://github.com/markmarkoh/datamaps) library - Interactive maps for data visualizations.
 
 Out of the box it includes advance arc-attack-plugin and demo mode.
 
-[DataMapsWrapper](https://codesandbox.io/s/react-typescript-datamaps-lgzbz)
+[DataMapsWrapper demo](https://codesandbox.io/s/react-typescript-datamaps-lgzbz)
 
 [AttackMap demo](https://codesandbox.io/s/react-typescript-datamaps-2-l7ebe)
 ## Installation
@@ -15,8 +15,12 @@ Use the package manager [npm](https://www.npmjs.com/package/react-typescript-dat
 npm install react-typescript-datamaps
 ```
 ## Out of the box components:
-AttackMap - Adding ability to easily disable attacks on svg maps.
-DataMapsWrapper - React (with typescript) wrapper for the datamaps library for easy integration in your react project.
+
+### AttackMap:
+Adding ability to easily display attacks on svg maps.
+
+### DataMapsWrapper:
+React (with typescript) wrapper for the datamaps library for easy integration in your react project.
 handleArcsAdvance - Datamaps plugin, can import alone and add to your own datamaps wrapper.
 
 ## Usage
