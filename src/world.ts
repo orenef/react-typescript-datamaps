@@ -1,3 +1,21 @@
+export const cyberThreats = [
+    {
+        name: 'Ransomware',
+        color: 'red',
+    },
+    {
+        name: 'Malware',
+        color: 'orange',
+    },
+    {
+        name: 'Phishing',
+        color: 'yellow',
+    },
+    {
+        name: 'DDoS',
+        color: 'pink',
+    }
+];
 export const world = [
         {
             "city": "Tokyo",

@@ -1,7 +1,7 @@
 import d3 from 'd3';
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { AttackMap } from '../AttackMap';
+import { AttackMap } from '../AttackMap';
 import { DataMapsWrapper } from '../DataMapsWrapper';
 
 const demoProps = {
@@ -51,7 +51,7 @@ const demoProps = {
 		.translate([element.offsetWidth / 2, element.offsetHeight / 2]);
 		var path = d3.geo.path()
 		.projection(projection);
-	  			  return {path: path, projection: projection};
+	  		return {path: path, projection: projection};
 	}
 };
 
@@ -120,8 +120,10 @@ function Demo() {
 ReactDOM.render(
   <React.Fragment>
 	<div className="test" style={{ width: '100%', height: '100%' }}>
-	  <Demo/>
-	{/* <AttackMap demoMode={true}/> */}
+	  {/* <Demo/> */}
+	<AttackMap demoMode={true}
+		// dataMapsProps={{ width: 600 , height: 500 }}
+	/>
 	</div>
   </React.Fragment>,
   document.getElementById('root'),

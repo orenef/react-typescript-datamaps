@@ -172,6 +172,19 @@ prop | type | default value | info
 data | ArcItem[] | [] | Array of attacks.
 dataMapsProps| undefined or DataMapOptions | undefined | Any props support by the datamaps library
 demoMod | boolean | false | Special mode - use to active demo of attacks without server needed.
+hideTicker | boolean | true | Hide/Show default attack ticker table 
+
+ArcItem {
+	origin: Location;
+	destination: Location;
+	options: Options;
+}
+
+Location {
+	latitude: string | number;
+	longitude: string | number;
+	name: string;
+}
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

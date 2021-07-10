@@ -1,11 +1,23 @@
-.react-attack-map-ticker {
-  z-index: 10002;
-  bottom: 0;
+.react-map-ticker-wrapper {
+  display: flex;
+  justify-content: center;
+  font-family: monospace;
+  position: relative;
+}
+
+.react-map-attack-wrapper {
+  display: flex;
+}
+
+.react-map-attack {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .react-attack-map-table-container th h1 {
   font-weight: bold;
-  font-size: 1em;
+  font-size:  16px;
   text-align: left;
   color: #ebf2f6;
 }
@@ -16,6 +28,7 @@
   -webkit-box-shadow: 0 2px 2px -2px #0E1119;
   -moz-box-shadow: 0 2px 2px -2px #0E1119;
   box-shadow: 0 2px 2px -2px #0E1119;
+  color: #ebf2f6;
 }
 
 .react-attack-map-table-container {
@@ -25,6 +38,7 @@
   margin: 0 auto;
   display: table;
   padding: 0 0 8em 0;
+  font-size: 12px;
 }
 
 .react-attack-map-table-container td, .react-attack-map-table-container th {
@@ -33,27 +47,119 @@
   padding-left:2%;
   min-height: 40px;
   min-width: 150px;
+  /* background: #454545; */
 }
 
 /* Background-color of the odd rows */
 .react-attack-map-table-container tr:nth-child(odd) {
-  background-color: #2c3844;
+  background-color: #2c3f46;
 }
 
 /* Background-color of the even rows */
 .react-attack-map-table-container tr:nth-child(even) {
-  background-color: #202832;
+  background-color: #1b262a;
 }
 
 .react-attack-map-table-container th {
-  background-color: #202832;
+  background-color: #1b262a;
 }
 
-.react-attack-map-table-container td:first-child { color: #FB667A; }
-
 .react-attack-map-table-container tr:hover {
- background-color: #464A52;
+ background-color: #364d53;
 -webkit-box-shadow: 0 6px 6px -6px #0E1119;
    -moz-box-shadow: 0 6px 6px -6px #0E1119;
         box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.react-table-type-wrapper {
+  display: flex;
+}
+
+.react-table-type {
+  position: relative;
+  height: 12px;
+  width: 12px;
+  border-radius: 100%;
+  margin-right: 8px;
+}
+
+.react-table-type-red:before {
+  border: 1px solid red;
+}
+
+.react-table-type-red:after {
+  border: 1px solid red;
+}
+
+.react-table-type-orange:before {
+  border: 1px solid orange;
+}
+
+.react-table-type-orange:after {
+  border: 1px solid orange;
+}
+
+.react-table-type-yellow:before {
+  border: 1px solid yellow;
+}
+
+.react-table-type-yellow:after {
+  border: 1px solid yellow;
+}
+
+.react-table-type:before {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  height: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 100%;
+  transform-origin: center center;
+  opacity: 0;
+  box-sizing: border-box;
+  animation: 2s .2s pulse2 infinite linear;
+}
+
+.react-table-type:after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  height: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 100%;
+  transform-origin: center center;
+  opacity: 0;
+  box-sizing: border-box;
+  animation: 2s pulse infinite linear;
+}
+
+
+@keyframes pulse {
+0% {
+  transform: scale(2);
+  opacity: .2;
+}
+100% {
+  transform: scale(2.3);
+  opacity: 0;
+}
+}
+
+@keyframes pulse2 {
+0% {
+  transform: scale(1.5);
+  opacity: .5;
+}
+100% {
+  transform: scale(1.8);
+  opacity: 0;
+}
 }
